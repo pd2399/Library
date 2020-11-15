@@ -71,7 +71,7 @@ class member:
         self.records = pd.read_csv("records.csv",index_col='Id')
         self.bname = bname
         self.id = id
-        self.new_row = pd.DataFrame({'Id':[id],'Book Name':[bname],'Date':[datetime.now()]})
+        self.new_row = pd.DataFrame({'Id':[id],'Book Name':[bname]})
         self.issued = self.issued.append(self.new_row,ignore_index=True)
         print(self.issued.iloc[-1:])
         self.records.loc[self.records['Book Name'] == self.bname,'Available'] = 'No'
